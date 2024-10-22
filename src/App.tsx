@@ -1,12 +1,13 @@
-import "./App.css";
+// import "./App.css";
 
-import MyTitle from "./components/MyTitle";
+import PokemonCard from "./components/PokemonCard";
 
 function App() {
 	return (
-		<section>
-			<h1>Hello React</h1>
-		</section>
+		<div className="App">
+			<h1>Bienvenue dans le Pokédex</h1>
+			<PokemonCard />
+		</div>
 	);
 }
 
