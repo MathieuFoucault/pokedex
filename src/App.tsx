@@ -1,4 +1,4 @@
-// import "./App.css";
+import "./App.css";
 
 import PokemonCard from "./components/PokemonCard";
 
