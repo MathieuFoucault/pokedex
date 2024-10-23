@@ -1,5 +1,10 @@
 import type React from "react";
 
+interface Pokemon {
+	name: string;
+	imgSrc?: string;
+}
+
 interface NavBarProps {
 	pokemonIndex: number;
 	setPokemonIndex: (index: number) => void;
@@ -11,15 +16,21 @@ const NavBar: React.FC<NavBarProps> = ({
 	setPokemonIndex,
 	pokemonList,
 }) => {
+	const handleClick = (pokemonIndex: number, name: string) => {
+		setPokemonIndex(pokemonIndex);
+		if (name === "pikachu") {
+			alert("pika pikachu !!!");
+		}
+	};
 	return (
 		<>
-			{pokemonList.map((pokemon, index) => (
+			{pokemonList.map((pokemonList, pokemonIndex) => (
 				<button
-					key={pokemon.name}
+					key={pokemonList.name}
 					type="button"
-					onClick={() => setPokemonIndex(index)}
+					onClick={() => handleClick(pokemonIndex, pokemonList.name)}
 				>
-					{pokemon.name}
+					{pokemonList.name}
 				</button>
 			))}
 		</>

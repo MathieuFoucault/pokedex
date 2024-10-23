@@ -3,6 +3,7 @@ import "./App.css";
 import PokemonCard from "./components/PokemonCard";
 import { useState } from "react";
 import NavBar from "./components/NavBar";
+import { useEffect } from "react";
 
 interface Pokemon {
 	name: string;
@@ -37,6 +38,9 @@ const pokemonList = [
 
 function App() {
 	const [pokemonIndex, setPokemonIndex] = useState<number>(0);
+	useEffect(() => {
+		alert("hello pokemon trainer :)");
+	}, []);
 
 	return (
 		<div className="App">
