@@ -10,9 +10,9 @@ interface PokemonCardProps {
 function PokemonCard({ pokemon }: PokemonCardProps) {
 	return (
 		<>
-			<figure>
+			<figure className="card">
 				{pokemon.imgSrc ? (
-					<img src={pokemon.imgSrc} alt={pokemon.name} />
+					<img src={pokemon.imgSrc} alt={pokemon.name} className="card-img" />
 				) : (
 					<p>???</p>
 				)}
