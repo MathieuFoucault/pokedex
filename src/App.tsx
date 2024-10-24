@@ -3,12 +3,13 @@ import "./App.css";
 import PokemonCard from "./components/PokemonCard";
 import { useState } from "react";
 import NavBar from "./components/NavBar";
+import { GetCardColor } from "./components/PokemonSticker";
 import { useEffect } from "react";
 
-interface Pokemon {
+type Pokemon = {
 	name: string;
 	imgSrc?: string;
-}
+};
 
 const pokemonList = [
 	{
@@ -42,10 +43,13 @@ function App() {
 		alert("hello pokemon trainer :)");
 	}, []);
 
+	const currentPokemon = pokemonList[pokemonIndex];
+	const cardColor = GetCardColor(currentPokemon.name);
+
 	return (
 		<div className="App">
 			<h1>Bienvenue dans le Pokédex</h1>
-			<PokemonCard pokemon={pokemonList[pokemonIndex]} />
+			<PokemonCard pokemon={currentPokemon} color={cardColor} />
 			<NavBar
 				pokemonIndex={pokemonIndex}
 				setPokemonIndex={setPokemonIndex}

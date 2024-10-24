@@ -1,15 +1,15 @@
 import type React from "react";
 
-interface Pokemon {
+type Pokemon = {
 	name: string;
 	imgSrc?: string;
-}
+};
 
-interface NavBarProps {
+type NavBarProps = {
 	pokemonIndex: number;
 	setPokemonIndex: (index: number) => void;
 	pokemonList: Pokemon[];
-}
+};
 
 const NavBar: React.FC<NavBarProps> = ({
 	pokemonIndex,

@@ -1,16 +1,17 @@
-interface PokemonListProps {
+type PokemonListProps = {
 	name: string;
 	imgSrc?: string;
-}
+};
 
-interface PokemonCardProps {
+type PokemonCardProps = {
 	pokemon: PokemonListProps;
-}
+	color: string;
+};
 
-function PokemonCard({ pokemon }: PokemonCardProps) {
+function PokemonCard({ pokemon, color }: PokemonCardProps) {
 	return (
 		<>
-			<figure className="card">
+			<figure className="card" style={{ backgroundColor: color }}>
 				{pokemon.imgSrc ? (
 					<img src={pokemon.imgSrc} alt={pokemon.name} className="card-img" />
 				) : (

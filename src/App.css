@@ -5,7 +5,7 @@
 	text-align: center;
 }
 .card {
-	width: 200px;
+	width: 600px;
 	padding: 1rem;
 	background-color: lightgreen;
 	border-radius: 5px;
@@ -17,10 +17,14 @@
 }
 
 .card-img {
-	width: 100%;
+	width: 95%;
 	height: auto;
 	margin-bottom: 0.5rem;
 	background-color: white;
 	border-radius: inherit;
 	box-shadow: inherit;
+}
+h1 {
+	padding: 0;
+	margin: 0;
 }
