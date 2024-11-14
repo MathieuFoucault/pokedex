@@ -1,36 +1,56 @@
-import { useState } from "react";
-
-import viteLogo from "/vite.svg";
-import reactLogo from "./assets/react.svg";
-
 import "./App.css";
 
+import PokemonCard from "./components/PokemonCard";
+import { useState } from "react";
+import NavBar from "./components/NavBar";
+import { GetCardColor } from "./components/PokemonSticker";
+import { useEffect } from "react";
+
+const pokemonList = [
+	{
+		name: "bulbasaur",
+		imgSrc:
+			"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
+	},
+	{
+		name: "charmander",
+		imgSrc:
+			"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
+	},
+	{
+		name: "squirtle",
+		imgSrc:
+			"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
+	},
+	{
+		name: "pikachu",
+		imgSrc:
+			"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
+	},
+	{
+		name: "mew",
+	},
+];
+
 function App() {
-	const [count, setCount] = useState(0);
+	const [pokemonIndex, setPokemonIndex] = useState<number>(0);
+	useEffect(() => {
+		alert("hello pokemon trainer :)");
+	}, []);
+
+	const currentPokemon = pokemonList[pokemonIndex];
+	const cardColor = GetCardColor(currentPokemon.name);
 
 	return (
-		<>
-			<div>
-				<a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-					<img src={viteLogo} className="logo" alt="Vite logo" />
-				</a>
-				<a href="https://react.dev" target="_blank" rel="noreferrer">
-					<img src={reactLogo} className="logo react" alt="React logo" />
-				</a>
-			</div>
-			<h1>Vite + React</h1>
-			<div className="card">
-				<button type="button" onClick={() => setCount((count) => count + 1)}>
-					count is {count}
-				</button>
-				<p>
-					Edit <code>src/App.tsx</code> and save to test HMR
-				</p>
-			</div>
-			<p className="read-the-docs">
-				Click on the Vite and React logos to learn more
-			</p>
-		</>
+		<div className="App">
+			<h1>Bienvenue dans le Pokédex</h1>
+			<PokemonCard pokemon={currentPokemon} color={cardColor} />
+			<NavBar
+				pokemonIndex={pokemonIndex}
+				setPokemonIndex={setPokemonIndex}
+				pokemonList={pokemonList}
+			/>
+		</div>
 	);
 }
 
