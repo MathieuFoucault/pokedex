@@ -11,11 +11,7 @@ type NavBarProps = {
 	pokemonList: Pokemon[];
 };
 
-const NavBar: React.FC<NavBarProps> = ({
-	pokemonIndex,
-	setPokemonIndex,
-	pokemonList,
-}) => {
+const NavBar: React.FC<NavBarProps> = ({ setPokemonIndex, pokemonList }) => {
 	const handleClick = (pokemonIndex: number, name: string) => {
 		setPokemonIndex(pokemonIndex);
 		if (name === "pikachu") {

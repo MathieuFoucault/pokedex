@@ -6,11 +6,6 @@ import NavBar from "./components/NavBar";
 import { GetCardColor } from "./components/PokemonSticker";
 import { useEffect } from "react";
 
-type Pokemon = {
-	name: string;
-	imgSrc?: string;
-};
-
 const pokemonList = [
 	{
 		name: "bulbasaur",
